@@ -6,10 +6,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestTree(t *testing.T) {
-
-	//region 0
-
+func TestLeaves(t *testing.T) {
 	t.Run("should match leaves", func(t *testing.T) {
 		nodeOne := Node{
 			value: 3,
@@ -29,11 +26,9 @@ func TestTree(t *testing.T) {
 		}
 		require.False(t, nodeOne.Equals(nodeTwo))
 	})
+}
 
-	//endregion
-
-	//region single child
-
+func TestChild(t *testing.T) {
 	t.Run("should match left", func(t *testing.T) {
 		nodeOne := Node{
 			value: 3,
@@ -123,11 +118,9 @@ func TestTree(t *testing.T) {
 		}
 		require.False(t, nodeOne.Equals(nodeTwo))
 	})
+}
 
-	//endregion
-
-	//region two children
-
+func TestChildren(t *testing.T) {
 	t.Run("should match both", func(t *testing.T) {
 		nodeOne := Node{
 			value: 3,
@@ -215,11 +208,9 @@ func TestTree(t *testing.T) {
 		}
 		require.False(t, nodeOne.Equals(nodeTwo))
 	})
+}
 
-	//endregion
-
-	//region grandchildren
-
+func TestGrandchildren(t *testing.T) {
 	t.Run("should match grandchildren", func(t *testing.T) {
 		nodeOne := Node{
 			value: 5,
@@ -403,6 +394,4 @@ func TestTree(t *testing.T) {
 		}
 		require.False(t, nodeOne.Equals(nodeTwo))
 	})
-
-	//endregion
 }
